@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import routes from './routes';
+import chat from './chat';
 
 const AppReducers = combineReducers({
-    routes
+    chat
 });
 
 export default AppReducers

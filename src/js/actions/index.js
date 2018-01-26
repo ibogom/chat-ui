@@ -1,5 +1,5 @@
-import * as actionTypes from './actionTypes';
-import * as RouteActions from './routes';
+import * as chatActionTypes from './chat/chatActionTypes';
+import * as chat from './chat/chat';
 
-export { actionTypes }
-export { RouteActions }
+export { chatActionTypes }
+export { chat }

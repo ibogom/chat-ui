@@ -3,7 +3,7 @@ const path = require('path');
 const IS_DEV_MODE = process.env.NODE_ENV === 'development';
 const BUILD_VERSION = '18.1.0';
 const APP_PATH = path.join(__dirname, "../../src");
-const DIST_PATH = path.join(__dirname, "../../src");
+const DIST_PATH = path.join(__dirname, IS_DEV_MODE ? "../../src" : "../../public");
 const HOST_NAME = 'localhost';
 const DEV_SERVER_PORT = 3000;
 
