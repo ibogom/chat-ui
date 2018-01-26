@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { appWrapper } from './app.scss';
+
+import './app.scss';
 
 /** COMPONENTS **/
 import { Header, Footer } from '../../components';
@@ -20,7 +21,7 @@ class App extends React.Component {
         const state = this.context.store.getState();
         const route = state.routes && state.routes.route ? state.routes.route : '';
 
-        return (<div className={appWrapper}>
+        return (<div className='appWrapper'>
                     <Header route={route} pages={PagesList} />
                     <Pages/>
                     <Footer/>

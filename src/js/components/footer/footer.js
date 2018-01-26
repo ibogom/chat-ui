@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { footer, one, two, three, four } from './footer.scss';
+import './footer.scss';
 export default class Footer extends React.Component {
 
     static propTypes = {
@@ -15,11 +15,11 @@ export default class Footer extends React.Component {
     }
 
     render(){
-        return(<div className={footer}>
-            <div className={one}></div>
-            <div className={two}></div>
-            <div className={three}></div>
-            <div className={four}></div>
+        return(<div className='footer'>
+            <div className='one'/>
+            <div className='two'/>
+            <div className='three'/>
+            <div className='four'/>
         </div>)
     }
 };

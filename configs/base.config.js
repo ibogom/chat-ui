@@ -1,84 +1,52 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
-var extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
-});
+const globalVariables = require('./varaibles/global.variables.webpack');
+
+/** MODULES **/
+const sassLoader = require('./modules/sass-loader-module');
+const babelLoader = require('./modules/babel-loader-module');
+const imageLoader = require('./modules/image-loader-module');
+
+/** PLUGINS **/
+const sassExtractPlugin = require('./plugins/sass-extract-plugin');
+const htmlWebpackPlugin = require('./plugins/html-webpack-plugin');
 
 module.exports = {
 
-    context: path.join(__dirname, "../src"),
+    context: globalVariables.APP_PATH,
 
     entry: {
         main: "./js/main"
     },
 
     output: {
-        path: path.join(__dirname, "../src"),
+        path: globalVariables.DIST_PATH,
         filename: "[name].min.js"
     },
 
     module: {
         rules: [
-            {
-                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                loader: 'url-loader?limit=100000'
-            },
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader'
-            }, {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            query: {
-                                modules: true,
-                                localIdentName: '[name]__[local]___[hash:base64:5]'
-                            }
-                        },
-                        'postcss-loader'
-                    ]
-                }),
-            },
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: extractSass.extract({
-                    fallback: 'style-loader',
-
-                    use: [
-                        {
-                            loader: 'css-loader',
-                            query: {
-                                modules: true,
-                                sourceMap: true,
-                                importLoaders: 2,
-                                localIdentName: '[name]__[local]___[hash:base64:5]'
-                            }
-                        },
-                        'sass-loader'
-                    ]
-                }),
-            }
+            imageLoader,
+            babelLoader,
+            sassLoader
         ]
     },
 
     plugins: [
 
-        extractSass,
+        sassExtractPlugin,
 
         new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+            NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+            buildVersion: globalVariables.BUILD_VERSION
         }),
 
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.EnvironmentPlugin(['NODE_ENV']),
+
+        new webpack.NoEmitOnErrorsPlugin(),
+
+        new webpack.HotModuleReplacementPlugin(),
+
+        htmlWebpackPlugin
     ]
 };

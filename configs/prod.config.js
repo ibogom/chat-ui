@@ -1,33 +1,16 @@
-var nodeExternals = require('webpack-node-externals');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
+const baseConfig = require('./base.config');
+const globalVariables = require('./varaibles/global.variables.webpack');
+const uglifyJsPlugin = require('./plugins/uglify-js-plugin');
+
+baseConfig.plugins.push(uglifyJsPlugin);
+
+module.exports = Object.assign({}, baseConfig, {
+
+    output: {
+        path: globalVariables.DIST_PATH,
+        filename: "[name].min.[hash].js",
+        publicPath: '/'
+    },
+
+    plugins: baseConfig.plugins
 });
-
-module.exports = {
-
-    target: 'node',
-
-    /** THIS METHOD EXCLUDE MODULES FROM BUNDLE **/
-    externals: [
-        nodeExternals()
-    ],
-
-    plugins: [
-
-        extractSass,
-
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-        }),
-
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: false,
-            sourcemap: false
-        }),
-
-        new webpack.NoEmitOnErrorsPlugin()
-    ]
-};
