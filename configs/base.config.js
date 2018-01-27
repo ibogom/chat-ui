@@ -3,12 +3,12 @@ const webpack = require('webpack');
 const globalVariables = require('./varaibles/global.variables.webpack');
 
 /** MODULES **/
-const sassLoader = require('./modules/sass-loader-module');
+const postcssLoader = require('./modules/postcss-loader-module');
 const babelLoader = require('./modules/babel-loader-module');
 const imageLoader = require('./modules/image-loader-module');
 
 /** PLUGINS **/
-const sassExtractPlugin = require('./plugins/sass-extract-plugin');
+const postCssExtractPlugin = require('./plugins/postcss-loader-plugin');
 const htmlWebpackPlugin = require('./plugins/html-webpack-plugin');
 
 module.exports = {
@@ -28,16 +28,16 @@ module.exports = {
         rules: [
             imageLoader,
             babelLoader,
-            sassLoader
+            postcssLoader
         ]
     },
 
     plugins: [
 
-        sassExtractPlugin,
+        postCssExtractPlugin,
 
         new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+            IS_DEV_MODE: globalVariables.IS_DEV_MODE,
             buildVersion: globalVariables.BUILD_VERSION
         }),
 

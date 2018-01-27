@@ -16,6 +16,7 @@
     "prop-types": "^15.5.10"
   },
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "autoprefixer-loader": "*",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.4",
@@ -32,6 +33,15 @@
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
+    "postcss": "^6.0.16",
+    "postcss-css-variables": "^0.8.0",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-flexbugs-fixes": "^3.3.0",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.10",
+    "postcss-nested": "^3.0.0",
+    "postcss-nesting": "^4.2.1",
+    "postcss-object-fit-images": "^1.1.2",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -42,9 +52,11 @@
     "sass-loader": "^6.0.6",
     "socket.io-client": "^2.0.4",
     "style-loader": "^0.13.2",
+    "stylelint": "^8.4.0",
     "url-loader": "^0.5.9",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "webpack-node-externals": "^1.6.0"
-  }
+  },
+  "dependencies": {}
 }

@@ -35,9 +35,9 @@ The project structure presented in this boilerplate is **fractal**, where functi
 ```
 .
 |-- /configs                             # Webpack configs folder
-|   |   /modules                         # Webpack modules folder
-|   |   /plugins                         # Webpack plugins folder
-|   |   /variables                       # Global webpack variables
+|   |--/modules                          # Webpack modules folder
+|   |--/plugins                          # Webpack plugins folder
+|   |--/variables                        # Global webpack variables
 |   |-- base.config.js                   # Base webpack config with default properties
 |   |-- dev.config.js                    # Developement webpack config   
 |   |-- prod.config.js                   # Production webpack config
@@ -50,10 +50,10 @@ The project structure presented in this boilerplate is **fractal**, where functi
 |   |          |-- _fonts.scss           # Scss file with fonts/icons and font variables 
 |   |          |-- main.scss             # Main scss file of the default theme
 |   |-- /js                              # Js folder
+|   |   |--/api                          # Chat API folder
 |   |   |--/actions                      # In this folder will be stored reducer action
 |   |   |--/components                   # Global Reusable Components
 |   |   |--/containers                   # Global Reusable Containers/Layouts Components
-|   |   |--/pages                        # Pages routing
 |   |   |--/reducers                     # Application reducers folder
 |   |   |--/stores                       # Application stores folder
 |   |   |--/test                         # Tests folder

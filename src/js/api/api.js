@@ -36,4 +36,6 @@ const API = {
     io: socket
 };
 
+window.io = socket;
+
 export default API;

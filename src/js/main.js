@@ -10,7 +10,7 @@ import {App} from './containers';
 import store from './stores';
 
 /** THEMES **/
-import '../assets/themes/default/main.scss';
+import './main.css';
 
 render(<Provider store={store}>
     <App/>

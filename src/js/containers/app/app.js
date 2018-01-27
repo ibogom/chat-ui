@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
-import './app.scss';
+import styles from './app.css';
 
 /** COMPONENTS **/
+
+import {Messenger, InputArea} from '../../components';
 
 class App extends React.Component {
 
@@ -13,9 +15,10 @@ class App extends React.Component {
     };
 
     render() {
-        return (<div className='appWrapper'>
-
-                </div>)
+        return (<div className={styles['app-wrapper']}>
+            <Messenger/>
+            <InputArea/>
+        </div>)
     }
 };
 
