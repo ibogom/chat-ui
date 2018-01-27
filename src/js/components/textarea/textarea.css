@@ -1,0 +1,44 @@
+.user-text-area{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 50px;
+    padding: 10px 5px;
+    box-sizing: border-box;
+
+    &.invalid{
+        bottom: 20px;
+    }
+
+    input[type="text"]{
+        width: calc(85% - 0.5rem);
+    }
+
+    input[type="submit"]{
+        width: calc(15% - 0.5rem);
+    }
+
+    input{
+        display: inline-block;
+        &.invalid{
+             border-color: var(--btn-err);
+             color: var(--btn-err);
+        }
+    }
+}
+
+.wrapper{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error-message{
+    color: var(--btn-err);
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    bottom: 10px;
+    position: relative;
+}

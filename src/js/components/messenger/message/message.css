@@ -1,0 +1,43 @@
+.message{
+    width: 100%;
+    display: block;
+
+    .message-wrapper{
+        display: table;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 10px;
+    }
+
+    .user-message{
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: var(--third-clr);
+        color: var(--font-scnd-clr);
+        margin: 10px;
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    .guest-message{
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: var(--scnd-clr);
+        color: var(--font-thrd-clr);
+        margin: 10px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .avatar{
+        width: 45px;
+        height: 45px;
+        background-size: contain;
+        display: table-cell;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+    }
+}

@@ -6,7 +6,7 @@ const APP_PATH = path.join(__dirname, "../../src");
 const DIST_PATH = path.join(__dirname, IS_DEV_MODE ? "../../src" : "../../public");
 const HOST_NAME = 'localhost';
 const DEV_SERVER_PORT = 3000;
-const ACTIVE_THEME_NAME: 'default';
+const ACTIVE_THEME_NAME = 'default';
 const CSS_VARIABLES_PATH = path.join(__dirname, '../../src/assets/themes/');
 
 module.exports = {

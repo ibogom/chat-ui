@@ -1,5 +1,7 @@
 import Messenger from './messenger/messenger';
-import InputArea from './inputArea/inputArea';
+import Textarea from './textarea/textarea';
+import Login from './login/login';
 
 export {Messenger};
-export {InputArea};
+export {Textarea};
+export {Login};

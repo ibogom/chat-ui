@@ -1,0 +1,32 @@
+.chat-login-area{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--middle-index);
+    .wrapper{
+        position: relative;
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+        vertical-align: middle;
+        background-color: var(--pr-clr);
+        border-radius: 5px;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        .intro{
+            font-size: var(--font-12px);
+            color: var(--font-pr-clr);
+        }
+        input[type="submit"]{
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
+}

@@ -1,41 +1,45 @@
-import io from "socket.io-client";
-
-const socket = io("https://spotim-demo-chat-server.herokuapp.com");
-
-socket.on("connect", function() {
-    console.log("connected to chat server!");
-});
-
-socket.on("disconnect", function() {
-    console.log("disconnected from chat server!");
-});
+import {chat} from '../actions';
 
 const API = {
 
+    init(io) {
+        this.socket = io;
+        return chat.chatSocketConnected(io.id);
+    },
+
+    close() {
+        delete this.socket;
+        return chat.chatSocketDisconnected();
+    },
+
+    handleMessage(message){
+        return chat.sendMessageSuccess(message);
+    },
+
     /**
-     * @param options { String } (request, success request, fail request)
+     * @param id { String } request name
+     * @param data { Object } data that should be send
      * @returns Deferred
      */
 
-    sendRequest(options) {
+    sendRequest(id, data) {
 
-        if(!options){
-            console.warn('NO OPTIONS DATA');
+        if (!id) {
+            console.warn('REQUEST ID IS NOT PROVIDED');
             return false;
         }
 
-        let dfd = new Promise((resolve, reject)=>{
-            socket.emit(options.request);
-            socket.on(options.success, resolve);
-            socket.on(options.fail, reject);
-        });
+        if (!this.socket) {
+            console.warn('SOCKET IS NOT CONNECTED');
+            return false;
+        }
 
-        return dfd;
-    },
-
-    io: socket
+        return new Promise(function (resolve, reject) {
+            this.socket.emit(id, data);
+            this.socket.on(id, resolve);
+            this.socket.on(id, reject);
+        }.bind(this));
+    }
 };
 
-window.io = socket;
-
-export default API;
+export {API};
