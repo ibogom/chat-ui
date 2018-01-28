@@ -1,8 +1,14 @@
 @font-face {
     font-family: 'Roboto';
     src: url('../assets/fonts/roboto/Roboto-Thin.ttf') format('truetype'),
-    url('../assets/fonts/roboto/Roboto-Light.ttf') format('truetype'),
-    url('../assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+    url('../assets/fonts/roboto/Roboto-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
@@ -113,6 +119,14 @@ input[type='date']:before{
     background-size: contain;
     background-repeat: no-repeat;
     margin: 0 auto;
+}
+
+:global(.align-left) {
+    text-align: left;
+}
+
+:global(.align-right) {
+    text-align: right;
 }
 
 html, body {

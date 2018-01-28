@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import style from './messenger.css';
+import styles from './messenger.css';
 
 import Message from './message/message';
 
@@ -18,14 +18,19 @@ export default class Messanger extends React.Component {
     }
 
     renderMessages(message, i){
-        return <Message key={i} message={message} correlationId={this.props.correlationId} {...this.props}/>
+        return <Message key={i}
+                        message={message}
+                        correlationId={this.props.correlationId}
+                        wrapper={this.messagesWrapper} {...this.props}/>
     }
 
     render() {
         const messages = this.props.messages.map(this.renderMessages);
 
-        return (<ul className={style['messages-wrapper']}>
-            { messages }
-        </ul>);
+        return (<div className={styles['messages']}>
+           <ul className={styles['messages-wrapper']} ref={(wrapper) => { this.messagesWrapper = wrapper; }}>
+               { messages }
+           </ul>
+        </div>);
     }
 };

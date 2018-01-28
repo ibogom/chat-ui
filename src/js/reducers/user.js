@@ -9,11 +9,13 @@ const getAvatar = function () {
         'assets/images/005-bullbasaur.png'
     ];
 
-    if (window.localStorage.getItem('avatar') !== null) {
-        return window.localStorage.getItem('avatar');
+    const cachedAvatar = window.sessionStorage.getItem('avatar');
+
+    if (cachedAvatar !== null) {
+        return cachedAvatar;
     } else {
-        const avatar = avatarsList[Math.floor(Math.random() * 5) + 1];
-        window.localStorage.setItem('avatar', avatar);
+        const avatar = avatarsList[Math.floor(Math.random() * 5)];
+        window.sessionStorage.setItem('avatar', avatar);
         return avatar;
     }
 };
