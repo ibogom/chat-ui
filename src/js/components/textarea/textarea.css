@@ -25,8 +25,8 @@
     input{
         display: inline-block;
         &.invalid{
-             border-color: var(--btn-err);
-             color: var(--btn-err);
+             border-color: var(--error-clr);
+             color: var(--error-clr);
         }
     }
 }
@@ -38,7 +38,7 @@
 }
 
 .error-message{
-    color: var(--btn-err);
+    color: var(--error-clr);
     background-color: white;
     width: 90%;
     margin: 0 auto;

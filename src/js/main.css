@@ -97,7 +97,7 @@ input[type='date']:before{
 }
 
 :global(.btn-scs) {
-    background-color: var(--btn-info);
+    background-color: var(--third-clr);
     border: none;
     color: var(--font-scnd-clr);
     padding: 10px 20px;
@@ -107,7 +107,7 @@ input[type='date']:before{
     cursor: pointer;
 
     &:hover {
-     background-color: var(--btn-scs);
+     background-color: color(var(--third-clr) lightness(65%))
     }
 
     &:focus {

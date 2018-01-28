@@ -40,6 +40,7 @@ module.exports = {
                         require('cssnano')(),
                         require('postcss-nested')(),
                         require('postcss-extend')(),
+                        require('postcss-color-function')(),
                         require('postcss-flexbugs-fixes')()
                     ]
                 }

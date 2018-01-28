@@ -1,8 +1,8 @@
 module.exports = {
-    "pr-clr": "#fff",
-    "scnd-clr": "#dedede",
-    "third-clr": "#007bb6",
-    "font-pr-clr": "#000",
+    "pr-clr": "#282350",
+    "scnd-clr": "#333058",
+    "third-clr": "#ec174f",
+    "font-pr-clr": "#fff",
     "font-scnd-clr": "#fff",
     "font-thrd-clr": "#a3a3a3",
     "error-clr": "#c30505",

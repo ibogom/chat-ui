@@ -1,7 +1,7 @@
 module.exports = {
     "pr-clr": "#fff",
     "scnd-clr": "#dedede",
-    "third-clr": "#007bb6",
+    "third-clr": "#25f1b0",
     "font-pr-clr": "#000",
     "font-scnd-clr": "#fff",
     "font-thrd-clr": "#a3a3a3",
