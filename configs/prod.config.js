@@ -1,8 +1,9 @@
 const baseConfig = require('./base.config');
 const globalVariables = require('./varaibles/global.variables.webpack');
-const uglifyJsPlugin = require('./plugins/uglify-js-plugin');
 
-baseConfig.plugins.push(uglifyJsPlugin);
+/** PLUGINS **/
+const uglifyJsPlugin = require('./plugins/uglify-js-plugin');
+const copyWebpackPLugin = require('./plugins/copy-webpack-plugin');
 
 module.exports = Object.assign({}, baseConfig, {
 
@@ -12,5 +13,17 @@ module.exports = Object.assign({}, baseConfig, {
         publicPath: '/'
     },
 
-    plugins: baseConfig.plugins
+    devServer: {
+        contentBase: globalVariables.DIST_PATH,
+        host: globalVariables.HOST_NAME,
+        port: globalVariables.DEV_SERVER_PORT,
+        historyApiFallback: true,
+        hot: true
+    },
+
+    plugins: [
+        ...baseConfig.plugins,
+        uglifyJsPlugin,
+        copyWebpackPLugin
+    ]
 });

@@ -56,7 +56,7 @@ export default class Textarea extends React.Component {
                        className={!isFromValid ? styles.invalid : ''}
                        placeholder="Please enter your message"
                        value={this.state.value}
-                       onChange={this.handleChange} autoFocus/>
+                       onChange={this.handleChange}/>
                 <input type="submit" className='btn-scs' value="SEND"/>
             </form>
         </div>);

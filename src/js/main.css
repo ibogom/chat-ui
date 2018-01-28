@@ -109,6 +109,10 @@ input[type='date']:before{
     &:hover {
      background-color: var(--btn-scs);
     }
+
+    &:focus {
+         outline:0;
+    }
 }
 
 :global(.logo) {

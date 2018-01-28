@@ -14,10 +14,12 @@
 
     input[type="text"]{
         width: calc(85% - 0.5rem);
+        display: inline-block;
     }
 
     input[type="submit"]{
         width: calc(15% - 0.5rem);
+        padding: 10px 5px;
     }
 
     input{

@@ -45,7 +45,7 @@ export default class LoginArea extends React.Component {
             <form onSubmit={this.handleSubmit} className={styles.wrapper}>
                 <div className="logo"/>
                 <h5 className={styles.intro}>Welcome to the SpotIM chat. Please Enter your chat name to start chatting</h5>
-                <input onChange={this.handleChange} type="text" placeholder="Please enter your chat name"/>
+                <input onChange={this.handleChange} type="text" placeholder="Please enter your chat name" autoFocus/>
                 <input type="submit" className='btn-scs' value='JOIN'/>
             </form>
         </div>);
