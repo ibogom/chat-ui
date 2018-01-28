@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/ibogom/chat-ui.svg?branch=master)](https://travis-ci.org/ibogom/chat-ui/builds/334482930)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-This project was started as development tools that should help web developers create new web sites/application. 
+This is a very light version of the chat 
 
 ## Installation
 
