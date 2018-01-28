@@ -132,6 +132,21 @@ input[type='date']:before{
 :global(.align-right) {
     text-align: right;
 }
+input {
+    &:global(.invalid) {
+        border-color: var(--error-clr);
+    }
+}
+
+:global(.error-message){
+    color: var(--error-clr);
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    bottom: 5px;
+    font-size: var(--font-14px);
+}
 
 html, body {
     position: relative;
