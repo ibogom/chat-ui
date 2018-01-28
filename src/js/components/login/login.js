@@ -5,7 +5,7 @@ import styles from './login.css';
 
 import ValidationUtil from '../../utils/validation.util';
 
-export default class LoginArea extends React.Component {
+export default class Login extends React.Component {
 
     static propTypes = {
         login: PropTypes.func.isRequired
@@ -37,7 +37,7 @@ export default class LoginArea extends React.Component {
     handleSubmit(e){
         e.preventDefault();
 
-        this.validation.validate({
+        return this.validation.validate({
             value: this.state.value,
             field: 'username'
         })

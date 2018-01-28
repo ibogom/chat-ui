@@ -39,7 +39,7 @@ export default class Textarea extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        this.validation.validate({
+        return this.validation.validate({
             value: this.state.value,
             field: 'message'
         }).then(this.sendMessage).then(this.setDefaultState).catch(this.showError);

@@ -8,7 +8,7 @@ module.exports = {
         "json"
     ],
     moduleNameMapper: {
-        "\\.(css|scss)$": "<rootDir>/src/js/test/__mocks__/styles.js"
+        "\\.(css)$": "<rootDir>/src/js/test/__mocks__/styles.js"
     },
     moduleDirectories: [
         "node_modules",

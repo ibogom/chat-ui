@@ -52,7 +52,9 @@ export default class Message extends React.Component {
     }
 
     componentDidMount(){
-        this.props.wrapper.scrollTop = this.props.wrapper.scrollHeight;
+        if(this.props.wrapper) {
+            this.props.wrapper.scrollTop = this.props.wrapper.scrollHeight;
+        }
     }
 
     render() {
