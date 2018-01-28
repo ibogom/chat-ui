@@ -114,7 +114,7 @@ module.exports = {
            
 ```
 
-This sass configuration provide ability to get css styles with JS import. Example: 
+This postcss configuration provide ability to get css styles with JS import. Example: 
 
 ```javascript
 
