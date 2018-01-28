@@ -1,6 +1,6 @@
 
 # SPOT.IM CHAT
-[![Build Status](https://travis-ci.org/ibogom/react-redux-boilerplate.svg?branch=master)](https://travis-ci.org/ibogom/react-redux-boilerplate/builds/277822177)
+[![Build Status](https://travis-ci.org/ibogom/chat-ui.svg?branch=master)](https://travis-ci.org/ibogom/chat-ui/builds/334482930)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 This project was started as development tools that should help web developers create new web sites/application. 
