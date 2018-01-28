@@ -172,6 +172,24 @@ export default class Header extends React.Component {
 }
 ```
 As you can see you can easily import css class names into your project and set styles directly to the html tags. 
+
+## Themes
+
+You can easily select theme just change ACTIVE_THEME_NAME at the `global.variables.webpack` file.
+
+There are 4 types of themes available: 
+* default 
+* limehouse 
+* modern-talking 
+* pink-floyd
+
+```javascript
+// configs/variables/global.variables.webpack.js
+
+const ACTIVE_THEME_NAME = 'default'; // write theme name that you would like to change  
+````
+
+Than you need just restart node server
  
 ## Tests
 I am using `jest` for testing.  So everything you need is just open you console/terminal and type following command:
