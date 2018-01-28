@@ -25,7 +25,7 @@ $ npm install
 After completing the installation step, you're ready to start the project!
 
 ```bash
-$ npm run start  # Start the development server
+$ npm run start  # Start the production server
 ```
 
 ## Project structure
