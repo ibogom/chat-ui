@@ -11,7 +11,7 @@
   },
   "author": "Ievgen Bogomolov",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "^7.2.5",
     "autoprefixer-loader": "*",
     "babel-core": "^6.17.0",
@@ -64,6 +64,5 @@
     "webpack-dev-server": "^2.8.2",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-node-externals": "^1.6.0"
-  },
-  "dependencies": {}
+  }
 }
