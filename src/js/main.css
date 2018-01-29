@@ -62,7 +62,6 @@ textarea {
     font-weight: normal;
     box-sizing: border-box;
     -webkit-appearance: none;
-    -webkit-border-radius: 0;
 &:focus{
      border:1px solid var(--scnd-clr);
  }
@@ -108,7 +107,6 @@ input[type='date']:before{
     margin-left: 0.5rem;
     cursor: pointer;
     -webkit-appearance: none;
-    -webkit-border-radius: 0;
     &:hover {
      background-color: color(var(--third-clr) lightness(65%))
     }
