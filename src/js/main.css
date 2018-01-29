@@ -107,7 +107,8 @@ input[type='date']:before{
     border-radius: 5px;
     margin-left: 0.5rem;
     cursor: pointer;
-
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
     &:hover {
      background-color: color(var(--third-clr) lightness(65%))
     }
