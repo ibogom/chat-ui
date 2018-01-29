@@ -61,6 +61,8 @@ textarea {
     font-size: var(--font-14px);
     font-weight: normal;
     box-sizing: border-box;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
 &:focus{
      border:1px solid var(--scnd-clr);
  }
