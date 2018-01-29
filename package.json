@@ -4,7 +4,7 @@
   "description": "Simple chat applicaiton",
   "main": "main.js",
   "scripts": {
-    "start": "export NODE_ENV=production && webpack && node --inspect server/bin/www.js",
+    "start": "export NODE_ENV=production && webpack && node server/bin/www.js",
     "dev": "export NODE_ENV=development && webpack-dev-server",
     "test": "jest --coverage -u -c=./configs/jest.config.js"
   },
