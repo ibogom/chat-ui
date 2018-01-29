@@ -55,6 +55,9 @@ The project structure presented in this boilerplate is **fractal**, where functi
 |   |   |--/containers                   # Global Reusable Containers/Layouts Components
 |   |   |--/reducers                     # Application reducers folder
 |   |   |--/stores                       # Application stores folder
+|   |   |--/utils                        # Additional common utils (for example form validation)
+|   |   |   |-- validation.rules.js      # Validation rules 
+|   |   |   |-- validation.util.js       # Components validation util
 |   |   |--/test                         # Tests folder
 |   |   |--main.js                       # Application bootstrap and rendering
 |   |--index.html                        # Main HTML page container for app
@@ -213,6 +216,12 @@ $ npm run test
          |--/containers             # Containers test folder
             |-- app.test.js         # App container test
 ```
+
+## DEMO
+
+You can find demo of the chat-ui by this link 
+
+https://ibogom-chat.herokuapp.com/
 
 ## Thank you 
 
