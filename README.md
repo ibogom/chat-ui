@@ -1,5 +1,5 @@
 
-# SPOT.IM CHAT
+# CHAT UI
 [![Build Status](https://travis-ci.org/ibogom/chat-ui.svg?branch=master)](https://travis-ci.org/ibogom/chat-ui/builds/334482930)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
