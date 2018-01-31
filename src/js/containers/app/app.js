@@ -47,9 +47,7 @@ class App extends React.Component {
     }
 
     handleMessage(message){
-        if(message.correlationId !== this.props.correlationId){
-            this.props.dispatch(API.handleMessage(message));
-        }
+        this.props.dispatch(API.handleMessage(message));
     }
 
     render() {

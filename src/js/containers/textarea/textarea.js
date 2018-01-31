@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux';
-import { chat } from '../../actions';
+import {chat} from '../../actions';
 /** COMPONENTS **/
 import {Textarea} from '../../components';
 
@@ -11,9 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    sendMessage: (message) => {
-        dispatch(chat.sendMessage(message));
-    }
+    sendMessage: chat.sendMessage
 });
 
 const TextareaContainer = connect(mapStateToProps, mapDispatchToProps)(Textarea);

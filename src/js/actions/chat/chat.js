@@ -1,5 +1,5 @@
 import * as chatActionTypes from './chatActionTypes';
-import { API } from '../../api/api';
+import {API} from '../../api/api';
 
 export function sendMessageSuccess(messages) {
     return {
@@ -16,10 +16,10 @@ export function sendMessageFailed(err) {
 }
 
 export function chatSocketConnected(correlationId) {
-     return {
-            type: chatActionTypes.CHAT_SOCKET_CONNECTED,
-            correlationId
-     };
+    return {
+        type: chatActionTypes.CHAT_SOCKET_CONNECTED,
+        correlationId
+    };
 }
 
 export function chatSocketDisconnected() {
@@ -30,9 +30,5 @@ export function chatSocketDisconnected() {
 }
 
 export function sendMessage(message) {
-    return dispatch => {
-        return API.sendRequest('spotim/chat', message)
-            .then(response => dispatch(sendMessageSuccess(response)))
-            .catch(error => dispatch(sendMessageFailed(error)))
-    }
+    return API.sendRequest('spotim/chat', message);
 };

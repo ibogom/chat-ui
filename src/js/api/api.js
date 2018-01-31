@@ -34,11 +34,7 @@ const API = {
             return false;
         }
 
-        return new Promise(function (resolve, reject) {
-            this.socket.emit(id, data);
-            this.socket.on(id, resolve);
-            this.socket.on(id, reject);
-        }.bind(this));
+        this.socket.emit(id, data);
     }
 };
 

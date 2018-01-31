@@ -17,7 +17,7 @@ export default class Message extends React.Component {
                 <p className={styles['user-message']}> {this.props.message.text} </p>
                 <div className={styles['avatar-wrapper']}>
                     <div className={styles['avatar']}
-                         style={{backgroundImage: 'url( ' + this.props.message.avatar + ')'}} alt="chat avatar"/>
+                         style={{backgroundImage: 'url( ' + this.props.message.avatar + ')'}}/>
                     <div className={styles['username']}> {this.props.message.username} </div>
                 </div>
             </div>
