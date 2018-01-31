@@ -19,7 +19,6 @@ const API = {
     /**
      * @param id { String } request name
      * @param data { Object } data that should be send
-     * @returns Deferred
      */
 
     sendRequest(id, data) {

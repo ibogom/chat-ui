@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-
+const path = require('path');
 const globalVariables = require('./varaibles/global.variables.webpack');
 
 /** MODULES **/
@@ -32,13 +32,20 @@ module.exports = {
         ]
     },
 
+    resolve: {
+        alias: {
+            'globalVariables': path.resolve(__dirname, './varaibles/global.variables.webpack')
+        }
+    },
+
     plugins: [
 
         postCssExtractPlugin,
 
         new webpack.DefinePlugin({
             IS_DEV_MODE: globalVariables.IS_DEV_MODE,
-            buildVersion: globalVariables.BUILD_VERSION
+            buildVersion: globalVariables.BUILD_VERSION,
+            SOCKET_SEND_MESSAGE_ID: globalVariables.SOCKET_SEND_MESSAGE_ID
         }),
 
         new webpack.EnvironmentPlugin(['NODE_ENV']),

@@ -1,22 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
+import io from "socket.io-client";
+import globalVariables from 'globalVariables';
 
 import styles from './app.css';
 
-/** COMPONENTS **/
-
-import {Messenger } from '../../components';
-
 /** CONTAINERS **/
-import { LoginContainer, TextareaContainer, MessengerContainer } from '../../containers';
+import {LoginContainer, TextareaContainer, MessengerContainer} from '../../containers';
 
 /** API **/
-import { API } from '../../api/api';
+import {API} from '../../api/api';
 
-import io from "socket.io-client";
+const socket = io(globalVariables.SOCKET_VARIABLES.SOCKET_URL);
 
-const socket = io("https://spotim-demo-chat-server.herokuapp.com");
 
 class App extends React.Component {
 
@@ -24,7 +21,7 @@ class App extends React.Component {
         store: PropTypes.object
     };
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.initSocketAPI = this.initSocketAPI.bind(this);
@@ -33,34 +30,35 @@ class App extends React.Component {
 
         socket.on("connect", this.initSocketAPI);
         socket.on("disconnect", this.closeSocketAPI);
-        socket.on("spotim/chat", this.handleMessage)
+        socket.on(globalVariables.SOCKET_VARIABLES.CHAT_SEND_MESSAGE_ID, this.handleMessage);
     }
 
-    initSocketAPI(){
+    initSocketAPI() {
         console.log("connected to chat server!");
         this.props.dispatch(API.init(socket));
     }
 
-    closeSocketAPI(){
+    closeSocketAPI() {
         console.log("disconnected from chat server!");
         this.props.dispatch(API.close(socket));
     }
 
-    handleMessage(message){
+    handleMessage(message) {
         this.props.dispatch(API.handleMessage(message));
     }
 
     render() {
         const isLoggedIn = this.props.username !== null;
-        return (<div className={styles['app-wrapper'] + ' ' + (!isLoggedIn ? styles['overflow'] : '')}>
-            { !isLoggedIn ? <LoginContainer/> : null }
+        return (<div className={styles['app-wrapper'] +
+            ' theme-' +  globalVariables.ACTIVE_THEME_NAME + ' '+ (!isLoggedIn ? styles['overflow'] : '')}>
+            {!isLoggedIn ? <LoginContainer/> : null}
             <MessengerContainer/>
             <TextareaContainer/>
         </div>)
     }
 };
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
     return {
         username: state.user.username,
         correlationId: state.chat.correlationId

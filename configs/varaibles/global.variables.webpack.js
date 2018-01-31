@@ -1,4 +1,5 @@
 const path = require('path');
+const SOCKET_VARIABLES = require('./socket.variables');
 
 const IS_DEV_MODE = process.env.NODE_ENV === 'development';
 const BUILD_VERSION = '18.1.0';
@@ -19,5 +20,6 @@ module.exports = {
     DEV_SERVER_PORT: DEV_SERVER_PORT,
     ACTIVE_THEME_NAME: ACTIVE_THEME_NAME,
     CSS_VARIABLES_PATH: CSS_VARIABLES_PATH,
-    IMAGE_PATH: IMAGE_PATH
+    IMAGE_PATH: IMAGE_PATH,
+    SOCKET_VARIABLES: SOCKET_VARIABLES
 };

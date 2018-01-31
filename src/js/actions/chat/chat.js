@@ -1,4 +1,6 @@
 import * as chatActionTypes from './chatActionTypes';
+import globalVariables from 'globalVariables';
+
 import {API} from '../../api/api';
 
 export function sendMessageSuccess(messages) {
@@ -30,5 +32,5 @@ export function chatSocketDisconnected() {
 }
 
 export function sendMessage(message) {
-    return API.sendRequest('spotim/chat', message);
+    return API.sendRequest(globalVariables.SOCKET_VARIABLES.CHAT_SEND_MESSAGE_ID, message);
 };
